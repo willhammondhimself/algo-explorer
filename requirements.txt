@@ -1,0 +1,4 @@
+PyQt5>=5.15.0
+jupyter>=1.0.0
+matplotlib>=3.7.0
+ipywidgets>=8.0.0
