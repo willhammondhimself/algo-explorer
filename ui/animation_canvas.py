@@ -52,6 +52,8 @@ class AnimationCanvas(QGraphicsView):
         Args:
             event: Wheel event
         """
+        # FIXME: zoom is jumpy on trackpads
+        # need to implement smooth scroll interpolation instead of basic scale factor
         # Zoom in/out with mouse wheel
         zoom_factor = 1.15
         if event.angleDelta().y() > 0:

@@ -8,6 +8,20 @@ Will Hammond, David Aguinada, Kai Yeung
 
 A PyQt5 app for visualizing data structures. We made this for our CSCI046 data structures and algorithms class because I (Will) kept getting confused by BST visualizations and pointer operations in the lecture slides. We wanted to actually *see* what happens step by step, so I built this visualizer. Turns out it helps a lot for understanding how the slow/fast pointer trick works for finding the middle of a linked list too.
 
+## What We Learned
+
+This project really helped us understand data structures beyond just memorizing operations for exams:
+
+- **BST Deletion is Tricky**: The two-child case (finding the in-order successor) took way longer to debug than we expected. Drawing it out on paper first would've saved us hours.
+
+- **PyQt Event Loop**: Getting the canvas to update smoothly with data structure changes was harder than expected. Had to learn about signals/slots and when to call `update()` vs `repaint()`.
+
+- **Slow/Fast Pointers Actually Work**: Seeing the algorithm run visually made it click way better than reading pseudocode. The fast pointer really does catch up at the middle!
+
+- **Testing Finds Bugs**: Writing comprehensive tests caught edge cases we never would've thought of (like the empty stack issue we fixed early on).
+
+- **UI Takes Longer Than You Think**: We spent probably 40% of our time on making the visualization look decent and handle user input properly.
+
 ## What It Does
 
 - **Stack** - Push, pop, peek. Also has a recursive reverse function

@@ -57,6 +57,8 @@ class BSTVisualizer(BaseVisualizer):
         Returns:
             Dictionary mapping node to (x, y) position
         """
+        # TODO: improve layout algorithm for large trees
+        # gets cramped after 20+ nodes, maybe look into Reingold-Tilford algorithm
         positions = {}
         self._inorder_position = 0
 

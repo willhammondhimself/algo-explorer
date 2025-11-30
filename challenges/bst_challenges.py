@@ -13,6 +13,8 @@ class BuildBalancedBSTChallenge(Challenge):
 
     Goal: Given sorted array [1,2,3,4,5,6,7], build a balanced BST.
     """
+    # TODO: add step-by-step visualization showing how the tree is built
+    # currently just shows final result
 
     def __init__(self):
         """Initialize balanced BST challenge."""

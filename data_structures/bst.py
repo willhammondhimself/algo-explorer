@@ -80,6 +80,8 @@ class BinarySearchTree:
         """
         Delete a value from the tree.
         """
+        # TODO: could optimize this with iterative approach instead of recursive
+        # but recursion is clearer for understanding the algorithm
         if not self.search(data):
             return False
         self.root = self._delete_recursive(self.root, data)
