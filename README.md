@@ -49,11 +49,11 @@ pip install pytest
 pytest
 ```
 
-I tried to cover the main cases and edge cases for each data structure.
+We tried to cover the main cases and edge cases for each data structure.
 
 ## Jupyter Notebooks
 
-I also made some Jupyter notebooks in the `notebooks/` folder that walk through each data structure with examples and complexity explanations. They're useful if you want to play around with the code interactively.
+We also made some Jupyter notebooks in the `notebooks/` folder that walk through each data structure with examples and complexity explanations. They're useful if you want to play around with the code interactively.
 
 ```bash
 pip install jupyter
@@ -79,7 +79,7 @@ The code is organized into:
 - `challenges/` - Challenge mode logic
 - `tests/` - Unit tests
 
-I used the Command pattern for undo/redo (Ctrl+Z/Ctrl+Y work).
+We used the Command pattern for undo/redo (Ctrl+Z/Ctrl+Y work).
 
 ## Known Issues
 
