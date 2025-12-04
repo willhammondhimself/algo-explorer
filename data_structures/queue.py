@@ -78,6 +78,7 @@ class QueueFromStacks:
         """Initialize queue with two empty stacks."""
         self.stack1 = []  # For enqueue
         self.stack2 = []  # For dequeue
+        self.dequeue_history = []  # Track dequeue operations
 
     def enqueue(self, item):
         """Add item to queue using stack operations."""
@@ -90,7 +91,9 @@ class QueueFromStacks:
                 self.stack2.append(self.stack1.pop())
         if not self.stack2:
             return None
-        return self.stack2.pop()
+        result = self.stack2.pop()
+        self.dequeue_history.append(result)
+        return result
 
     def is_empty(self):
         """Check if queue is empty."""
@@ -99,3 +102,11 @@ class QueueFromStacks:
     def size(self):
         """Return number of items in queue."""
         return len(self.stack1) + len(self.stack2)
+
+    def clear_history(self):
+        """Clear dequeue history (for challenge reset)."""
+        self.dequeue_history.clear()
+
+    def get_dequeue_history(self):
+        """Get the history of dequeued values."""
+        return self.dequeue_history.copy()

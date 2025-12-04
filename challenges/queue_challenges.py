@@ -23,48 +23,37 @@ class QueueFromStacksChallenge(Challenge):
             hint="The QueueFromStacks class uses stack1 for enqueue and stack2 for dequeue."
         )
         self.expected_sequence = [1, 2, 3]
-        self.dequeue_results = []
 
     def setup(self) -> QueueFromStacks:
         """
         Create initial queue from stacks.
 
         Returns:
-            Empty QueueFromStacks instance
+            Empty QueueFromStacks instance with cleared history
         """
-        return QueueFromStacks()
+        queue = QueueFromStacks()
+        queue.clear_history()
+        return queue
 
     def validate(self, queue: QueueFromStacks) -> bool:
         """
         Validate queue behavior.
 
+        Checks:
+        1. Queue must be empty (all items dequeued)
+        2. Dequeue history must match expected FIFO sequence [1,2,3]
+
         Args:
             queue: QueueFromStacks instance
 
         Returns:
-            True if operations maintain FIFO order
+            True if queue is empty AND dequeue sequence is [1,2,3]
         """
-        # This validation is manual - user needs to verify dequeue order
-        # In the UI, we'll track dequeue operations
-        return queue.is_empty() and len(self.dequeue_results) == 3
+        dequeue_history = queue.get_dequeue_history()
+        is_empty = queue.is_empty()
+        correct_sequence = dequeue_history == self.expected_sequence
 
-    def record_dequeue(self, value: any) -> None:
-        """
-        Record a dequeue operation for validation.
-
-        Args:
-            value: Dequeued value
-        """
-        self.dequeue_results.append(value)
-
-    def check_sequence(self) -> bool:
-        """
-        Check if dequeued values are in correct order.
-
-        Returns:
-            True if sequence matches expected
-        """
-        return self.dequeue_results == self.expected_sequence
+        return is_empty and correct_sequence
 
     def get_solution_steps(self) -> str:
         """
